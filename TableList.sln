@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableList", "TableList\TableList.csproj", "{99E6C0CB-BBF4-4DFA-96FE-BF678116EC97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableList", "TableList\TableList.csproj", "{99E6C0CB-BBF4-4DFA-96FE-BF678116EC97}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7A6E1E5E-2390-4FB5-94B6-83A7F0A10494}"
 EndProject
@@ -26,10 +26,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{99E6C0CB-BBF4-4DFA-96FE-BF678116EC97} = {7A6E1E5E-2390-4FB5-94B6-83A7F0A10494}
-		{B8D49C61-AA1F-4FFE-9368-731EC2F9D5DA} = {7A6E1E5E-2390-4FB5-94B6-83A7F0A10494}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {306DD414-7078-42B4-949B-DB64269C4445}
