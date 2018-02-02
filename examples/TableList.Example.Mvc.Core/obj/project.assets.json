@@ -4746,6 +4746,31 @@
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
+      },
+      "TableList/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/TableList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TableList.dll": {}
+        }
+      },
+      "TableList.Mvc.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Html.Abstractions": "2.0.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.0.2",
+          "TableList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TableList.Mvc.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TableList.Mvc.Core.dll": {}
+        }
       }
     }
   },
@@ -12526,12 +12551,24 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
+    },
+    "TableList/1.0.0": {
+      "type": "project",
+      "path": "../../src/TableList/TableList.csproj",
+      "msbuildProject": "../../src/TableList/TableList.csproj"
+    },
+    "TableList.Mvc.Core/1.0.0": {
+      "type": "project",
+      "path": "../../src/TableList.Mvc.Core/TableList.Mvc.Core.csproj",
+      "msbuildProject": "../../src/TableList.Mvc.Core/TableList.Mvc.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.5",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "TableList >= 1.0.0",
+      "TableList.Mvc.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12566,7 +12603,14 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Hovo\\Source\\Repos\\TableList\\src\\TableList.Mvc.Core\\TableList.Mvc.Core.csproj": {
+              "projectPath": "C:\\Users\\Hovo\\Source\\Repos\\TableList\\src\\TableList.Mvc.Core\\TableList.Mvc.Core.csproj"
+            },
+            "C:\\Users\\Hovo\\Source\\Repos\\TableList\\src\\TableList\\TableList.csproj": {
+              "projectPath": "C:\\Users\\Hovo\\Source\\Repos\\TableList\\src\\TableList\\TableList.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

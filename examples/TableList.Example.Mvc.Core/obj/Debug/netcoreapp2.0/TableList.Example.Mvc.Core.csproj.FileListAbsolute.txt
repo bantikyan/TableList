@@ -9,3 +9,7 @@ C:\Users\Hovo\Source\Repos\TableList\examples\TableList.Example.Mvc.Core\obj\Deb
 C:\Users\Hovo\Source\Repos\TableList\examples\TableList.Example.Mvc.Core\obj\Debug\netcoreapp2.0\TableList.Example.Mvc.Core.AssemblyInfo.cs
 C:\Users\Hovo\Source\Repos\TableList\examples\TableList.Example.Mvc.Core\obj\Debug\netcoreapp2.0\TableList.Example.Mvc.Core.dll
 C:\Users\Hovo\Source\Repos\TableList\examples\TableList.Example.Mvc.Core\obj\Debug\netcoreapp2.0\TableList.Example.Mvc.Core.pdb
+C:\Users\Hovo\Source\Repos\TableList\examples\TableList.Example.Mvc.Core\bin\Debug\netcoreapp2.0\TableList.dll
+C:\Users\Hovo\Source\Repos\TableList\examples\TableList.Example.Mvc.Core\bin\Debug\netcoreapp2.0\TableList.Mvc.Core.dll
+C:\Users\Hovo\Source\Repos\TableList\examples\TableList.Example.Mvc.Core\bin\Debug\netcoreapp2.0\TableList.Mvc.Core.pdb
+C:\Users\Hovo\Source\Repos\TableList\examples\TableList.Example.Mvc.Core\bin\Debug\netcoreapp2.0\TableList.pdb

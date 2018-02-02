@@ -13,4 +13,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\TableList.Mvc.Core\TableList.Mvc.Core.csproj" />
+    <ProjectReference Include="..\..\src\TableList\TableList.csproj" />
+  </ItemGroup>
+
 </Project>
