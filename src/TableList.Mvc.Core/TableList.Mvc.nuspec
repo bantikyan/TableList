@@ -13,7 +13,7 @@
     <description>$description$</description>
     <releaseNotes>Initial Testing release</releaseNotes>
     <copyright>Copyright 2017</copyright>
-    <tags>CRUD Table List Inline Edit MVC</tags>
+    <tags>CRUD Table List Inline Edit MVC Core</tags>
   </metadata>
   <files>
     <file src="Content\tablelist-mvc.css" target="" />
