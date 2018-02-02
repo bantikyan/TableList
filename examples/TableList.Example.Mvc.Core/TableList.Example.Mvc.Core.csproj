@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>Zetalex.TableList.Example.Mvc.Core</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
