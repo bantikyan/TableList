@@ -88,7 +88,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Scripts\jquery-2.2.4.intellisense.js" />
+    <Content Include="Content\tablelist-mvc.css" />
+    <Content Include="Content\tablelist-mvc.min.css" />
+    <Content Include="Scripts\jquery-2.2.4.js" />
+    <Content Include="Scripts\jquery-2.2.4.min.js" />
+    <Content Include="Scripts\tablelist-mvc.js" />
+    <Content Include="Scripts\tablelist-mvc.min.js" />
     <Content Include="TableList.Mvc.nuspec" />
+    <Content Include="Scripts\jquery-2.2.4.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -101,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableList.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TableList\TableList.csproj">
