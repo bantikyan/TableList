@@ -46,10 +46,16 @@ namespace Zetalex.TableList.Mvc.Core
                 var typeName = GetPropertyTypeName(prop);
 
                 var propertyData = typeMetadata.Properties.Where(x => x.PropertyName == prop.Name).FirstOrDefault();
-                //DefaultHtmlGenerator 
+
+
                 //var attr = html.GetUnobtrusiveValidationAttributes(prop.Name, propertyData);
                 var attr = new Dictionary<string, object>();
                 //attr.Add("class", "form-control");
+
+                attr.Add("data-val-required", "The ID field is required.");
+                attr.Add("data-val-number", "The field ID must be a number.");
+                attr.Add("data-val", "true");
+
                 attr.Add("class", "");
                 attr.Add("placeholder", propertyData.DisplayName ?? prop.Name);
                 if (propertyData.IsReadOnly)
@@ -136,7 +142,8 @@ namespace Zetalex.TableList.Mvc.Core
                     }
 
                     var td = new TagBuilder("td");
-                    td.InnerHtml.AppendHtml(html.TextBox(fName + prop.Name, prop.GetValue((TableListItem)items[i]), formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributesClone[prop.Name]));
+                    var xx = html.TextBox(fName + prop.Name, prop.GetValue((TableListItem)items[i]), formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributesClone[prop.Name]);
+                    td.InnerHtml.AppendHtml(xx);
                     td.InnerHtml.AppendHtml(html.ValidationMessage(fName + prop.Name));
 
                     tr.InnerHtml.AppendHtml(td);

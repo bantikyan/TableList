@@ -42,6 +42,7 @@ namespace Zetalex.TableList.Example.Mvc.Core.Models
         //[DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         //public decimal? RenewalPrice { get; set; }
 
+        [Required]
         [DisplayFormat(DataFormatString = "{0:0.00}", ApplyFormatInEditMode = true)]
         public decimal Initial { get; set; }
         [DisplayFormat(DataFormatString = "{0:0.00}", ApplyFormatInEditMode = true)]
