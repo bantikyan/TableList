@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableList.Example.Mvc.Core"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableList.Mvc", "src\TableList.Mvc\TableList.Mvc.csproj", "{99D2BAA1-493B-4F90-B11C-7AB603FE7325}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableList.Mvc.Core", "src\TableList.Mvc.Core\TableList.Mvc.Core.csproj", "{8DA497DC-E526-45D3-BBBF-60652FA550D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{99D2BAA1-493B-4F90-B11C-7AB603FE7325}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99D2BAA1-493B-4F90-B11C-7AB603FE7325}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99D2BAA1-493B-4F90-B11C-7AB603FE7325}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DA497DC-E526-45D3-BBBF-60652FA550D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DA497DC-E526-45D3-BBBF-60652FA550D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DA497DC-E526-45D3-BBBF-60652FA550D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DA497DC-E526-45D3-BBBF-60652FA550D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{603CB379-4132-4969-84F2-38ED3B4748B5} = {5766AB16-D440-4BEE-8C71-E2F57F1152E0}
 		{BD4EEF07-8F98-48CF-B71F-166D0BCBEF99} = {5766AB16-D440-4BEE-8C71-E2F57F1152E0}
 		{99D2BAA1-493B-4F90-B11C-7AB603FE7325} = {64C604D3-05C9-42E9-A0A9-D57F7F26F527}
+		{8DA497DC-E526-45D3-BBBF-60652FA550D4} = {64C604D3-05C9-42E9-A0A9-D57F7F26F527}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDC0DE85-FD9C-4989-821B-7749ED3AB9D1}

@@ -1,0 +1,6 @@
+C:\Users\Hovo\Source\Repos\TableList\src\TableList.Mvc.Core\bin\Debug\netstandard2.0\TableList.Mvc.Core.deps.json
+C:\Users\Hovo\Source\Repos\TableList\src\TableList.Mvc.Core\bin\Debug\netstandard2.0\TableList.Mvc.Core.dll
+C:\Users\Hovo\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.csprojResolveAssemblyReference.cache
+C:\Users\Hovo\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.csproj.CoreCompileInputs.cache
+C:\Users\Hovo\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.AssemblyInfoInputs.cache
+C:\Users\Hovo\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.AssemblyInfo.cs
