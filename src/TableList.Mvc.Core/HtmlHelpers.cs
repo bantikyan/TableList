@@ -46,6 +46,7 @@ namespace Zetalex.TableList.Mvc.Core
                 var typeName = GetPropertyTypeName(prop);
 
                 var propertyData = typeMetadata.Properties.Where(x => x.PropertyName == prop.Name).FirstOrDefault();
+                //DefaultHtmlGenerator 
                 //var attr = html.GetUnobtrusiveValidationAttributes(prop.Name, propertyData);
                 var attr = new Dictionary<string, object>();
                 //attr.Add("class", "form-control");
