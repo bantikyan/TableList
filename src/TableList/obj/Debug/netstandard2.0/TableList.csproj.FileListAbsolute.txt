@@ -1,0 +1,9 @@
+C:\Users\Mike\Source\Repos\TableList\src\TableList\bin\Debug\netstandard2.0\TableList.deps.json
+C:\Users\Mike\Source\Repos\TableList\src\TableList\bin\Debug\netstandard2.0\TableList.dll
+C:\Users\Mike\Source\Repos\TableList\src\TableList\bin\Debug\netstandard2.0\TableList.pdb
+C:\Users\Mike\Source\Repos\TableList\src\TableList\obj\Debug\netstandard2.0\TableList.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Source\Repos\TableList\src\TableList\obj\Debug\netstandard2.0\TableList.csproj.CoreCompileInputs.cache
+C:\Users\Mike\Source\Repos\TableList\src\TableList\obj\Debug\netstandard2.0\TableList.AssemblyInfoInputs.cache
+C:\Users\Mike\Source\Repos\TableList\src\TableList\obj\Debug\netstandard2.0\TableList.AssemblyInfo.cs
+C:\Users\Mike\Source\Repos\TableList\src\TableList\obj\Debug\netstandard2.0\TableList.dll
+C:\Users\Mike\Source\Repos\TableList\src\TableList\obj\Debug\netstandard2.0\TableList.pdb
