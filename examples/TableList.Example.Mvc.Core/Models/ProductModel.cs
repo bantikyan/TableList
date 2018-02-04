@@ -13,7 +13,7 @@ namespace Zetalex.TableList.Example.Mvc.Core.Models
         public int ID { get; set; }
         public int WhiteLabelID { get; set; }
 
-        [Required]
+        //[Required]
         //[AllowHtml]
         public string Title { get; set; }
 
@@ -26,6 +26,7 @@ namespace Zetalex.TableList.Example.Mvc.Core.Models
     [Serializable]
     public class ProductBlockPrice : TableListItem
     {
+        [MaxLength(15)]
         [TableListHiddenInput]
         public int ID { get; set; }
 
@@ -43,6 +44,7 @@ namespace Zetalex.TableList.Example.Mvc.Core.Models
         //public decimal? RenewalPrice { get; set; }
 
         [Required]
+        [ReadOnly(true)]
         [DisplayFormat(DataFormatString = "{0:0.00}", ApplyFormatInEditMode = true)]
         public decimal Initial { get; set; }
         [DisplayFormat(DataFormatString = "{0:0.00}", ApplyFormatInEditMode = true)]
@@ -51,6 +53,7 @@ namespace Zetalex.TableList.Example.Mvc.Core.Models
         public int CountFrom { get; set; }
         [Range(1, int.MaxValue, ErrorMessage = "License Count must be greater then 0")]
         [DisplayName("Count To")]
+        [ReadOnly(true)]
         public int? CountTo { get; set; }
     }
 }

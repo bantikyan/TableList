@@ -30,7 +30,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "GaznlnJtiiiH10HWc2TdMjbjnWXPCKnmCEIqnnqNs0qKZ8RL8nnfKvINCjmCXmQTDYMNmwQ49VZvgsfBQOjwJA==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -177,7 +177,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hovo\\.nuget\\packages\\": {},
+    "C:\\Users\\Mike\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -186,17 +186,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hovo\\Source\\Repos\\TableList\\src\\TableList\\TableList.csproj",
+      "projectUniqueName": "C:\\Users\\Mike\\Source\\Repos\\TableList\\src\\TableList\\TableList.csproj",
       "projectName": "TableList",
-      "projectPath": "C:\\Users\\Hovo\\Source\\Repos\\TableList\\src\\TableList\\TableList.csproj",
-      "packagesPath": "C:\\Users\\Hovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hovo\\Source\\Repos\\TableList\\src\\TableList\\obj\\",
+      "projectPath": "C:\\Users\\Mike\\Source\\Repos\\TableList\\src\\TableList\\TableList.csproj",
+      "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mike\\Source\\Repos\\TableList\\src\\TableList\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Hovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mike\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -204,6 +204,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Mike\\.dotnet\\NuGetFallbackFolder": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

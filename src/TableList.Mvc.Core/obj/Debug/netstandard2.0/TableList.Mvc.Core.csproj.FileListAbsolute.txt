@@ -9,3 +9,14 @@ C:\Users\Hovo\Source\Repos\TableList\src\TableList.Mvc.Core\bin\Debug\netstandar
 C:\Users\Hovo\Source\Repos\TableList\src\TableList.Mvc.Core\bin\Debug\netstandard2.0\TableList.pdb
 C:\Users\Hovo\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.dll
 C:\Users\Hovo\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.pdb
+C:\Users\Mike\Source\Repos\TableList\src\TableList.Mvc.Core\bin\Debug\netstandard2.0\TableList.Mvc.Core.deps.json
+C:\Users\Mike\Source\Repos\TableList\src\TableList.Mvc.Core\bin\Debug\netstandard2.0\TableList.Mvc.Core.dll
+C:\Users\Mike\Source\Repos\TableList\src\TableList.Mvc.Core\bin\Debug\netstandard2.0\TableList.Mvc.Core.pdb
+C:\Users\Mike\Source\Repos\TableList\src\TableList.Mvc.Core\bin\Debug\netstandard2.0\TableList.dll
+C:\Users\Mike\Source\Repos\TableList\src\TableList.Mvc.Core\bin\Debug\netstandard2.0\TableList.pdb
+C:\Users\Mike\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.csproj.CoreCompileInputs.cache
+C:\Users\Mike\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.AssemblyInfoInputs.cache
+C:\Users\Mike\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.AssemblyInfo.cs
+C:\Users\Mike\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.dll
+C:\Users\Mike\Source\Repos\TableList\src\TableList.Mvc.Core\obj\Debug\netstandard2.0\TableList.Mvc.Core.pdb

@@ -1,9 +1,15 @@
 ﻿using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.DataAnnotations.Internal;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
@@ -38,46 +44,39 @@ namespace Zetalex.TableList.Mvc.Core
             var properties = baseType.GetProperties().ToList();
             var typeMetadata = html.MetadataProvider.GetMetadataForType(baseType);
 
-            Dictionary<string, IDictionary<string, object>> propertyAttributes = new Dictionary<string, IDictionary<string, object>>();
-            Dictionary<string, Dictionary<string, string>> formattingAttributes = new Dictionary<string, Dictionary<string, string>>();
+            var propertyAttributes = new Dictionary<string, IDictionary<string, object>>();
+            var formattingAttributes = new Dictionary<string, IDictionary<string, string>>();
 
             foreach (var prop in properties)
             {
-                var typeName = GetPropertyTypeName(prop);
+                var propType = GetPropertyType(prop);
 
                 var propertyData = typeMetadata.Properties.Where(x => x.PropertyName == prop.Name).FirstOrDefault();
+                var attrs = GetUnobtrusiveValidationAttributes(prop, propertyData, html.MetadataProvider);
 
-
-                //var attr = html.GetUnobtrusiveValidationAttributes(prop.Name, propertyData);
-                var attr = new Dictionary<string, object>();
-                //attr.Add("class", "form-control");
-
-                attr.Add("data-val-required", "The ID field is required.");
-                attr.Add("data-val-number", "The field ID must be a number.");
-                attr.Add("data-val", "true");
-
-                attr.Add("class", "");
-                attr.Add("placeholder", propertyData.DisplayName ?? prop.Name);
+                //attrs.Add("class", "form-control");
+                attrs.Add("class", "");
+                attrs.Add("placeholder", propertyData.DisplayName ?? prop.Name);
                 if (propertyData.IsReadOnly)
                 {
-                    attr.Add("readonly", "readonly");
+                    attrs.Add("readonly", "readonly");
                 }
 
-                if (typeName == "DateTime")
+                if (propType == typeof(DateTime))
                 {
-                    attr["class"] += " date-picker";
+                    attrs["class"] += " date-picker";
                 }
 
-                propertyAttributes.Add(prop.Name, attr);
+                propertyAttributes.Add(prop.Name, attrs);
 
-                Dictionary<string, string> fAttr = new Dictionary<string, string>();
-                fAttr.Add(nameof(propertyData.DisplayName), propertyData.DisplayName);
-                fAttr.Add(nameof(propertyData.DisplayFormatString), propertyData.DisplayFormatString);
-                formattingAttributes.Add(prop.Name, fAttr);
+                var fAttrs = new Dictionary<string, string>();
+                fAttrs.Add(nameof(propertyData.DisplayName), propertyData.DisplayName);
+                fAttrs.Add(nameof(propertyData.DisplayFormatString), propertyData.DisplayFormatString);
+                formattingAttributes.Add(prop.Name, fAttrs);
             }
 
             var table = new TagBuilder("table");
-            //StringBuilder sb = new StringBuilder();
+
             if (showHeader)
             {
                 AppendHead(table, properties, formattingAttributes);
@@ -110,12 +109,11 @@ namespace Zetalex.TableList.Mvc.Core
             }
 
             table.InnerHtml.AppendHtml(tbody);
-            //tag.InnerHtml.SetContent(sb.ToString());
-            //AppendHtml(, TagBuilderToString(tbody));
+
             return new HtmlString(TagBuilderToString(table));
         }
 
-        private static void AppendRows(IHtmlHelper html, TagBuilder tag, List<PropertyInfo> properties, dynamic items, string fieldName, Dictionary<string, IDictionary<string, object>> propertyAttributes, Dictionary<string, Dictionary<string, string>> formattingAttributes)
+        private static void AppendRows(IHtmlHelper html, TagBuilder tag, List<PropertyInfo> properties, dynamic items, string fieldName, Dictionary<string, IDictionary<string, object>> propertyAttributes, Dictionary<string, IDictionary<string, string>> formattingAttributes)
         {
             for (int i = 0; i < items.Count; i++)
             {
@@ -142,6 +140,7 @@ namespace Zetalex.TableList.Mvc.Core
                     }
 
                     var td = new TagBuilder("td");
+                    
                     var xx = html.TextBox(fName + prop.Name, prop.GetValue((TableListItem)items[i]), formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributesClone[prop.Name]);
                     td.InnerHtml.AppendHtml(xx);
                     td.InnerHtml.AppendHtml(html.ValidationMessage(fName + prop.Name));
@@ -178,7 +177,7 @@ namespace Zetalex.TableList.Mvc.Core
             }
         }
 
-        private static void AppendLastRow(IHtmlHelper html, TagBuilder tag, List<PropertyInfo> properties, string fieldName, Dictionary<string, IDictionary<string, object>> propertyAttributes, Dictionary<string, Dictionary<string, string>> formattingAttributes, int index)
+        private static void AppendLastRow(IHtmlHelper html, TagBuilder tag, List<PropertyInfo> properties, string fieldName, Dictionary<string, IDictionary<string, object>> propertyAttributes, Dictionary<string, IDictionary<string, string>> formattingAttributes, int index)
         {
             var fName = fieldName + "[" + index + "].";
 
@@ -248,7 +247,7 @@ namespace Zetalex.TableList.Mvc.Core
             tag.InnerHtml.AppendHtml(tr);
         }
 
-        private static void AppendHead(TagBuilder tag, List<PropertyInfo> properties, Dictionary<string, Dictionary<string, string>> formattingAttributes)
+        private static void AppendHead(TagBuilder tag, List<PropertyInfo> properties, Dictionary<string, IDictionary<string, string>> formattingAttributes)
         {
             var thead = new TagBuilder("thead");
             var tr = new TagBuilder("tr");
@@ -288,19 +287,19 @@ namespace Zetalex.TableList.Mvc.Core
             return propertyAttributesClone;
         }
 
-        private static string GetPropertyTypeName(PropertyInfo prop)
+        private static Type GetPropertyType(PropertyInfo prop)
         {
-            string typeName = "";
+            Type type;
             if (prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
             {
-                typeName = prop.PropertyType.GetGenericArguments()[0].Name;
+                type = prop.PropertyType.GetGenericArguments()[0];
             }
             else
             {
-                typeName = prop.PropertyType.Name;
+                type = prop.PropertyType;
             }
 
-            return typeName;
+            return type;
         }
 
         private static string TagBuilderToString(TagBuilder tagBuilder, TagRenderMode renderMode = TagRenderMode.Normal)
@@ -308,6 +307,50 @@ namespace Zetalex.TableList.Mvc.Core
             var writer = new System.IO.StringWriter();
             tagBuilder.WriteTo(writer, HtmlEncoder.Default);
             return writer.ToString();
+        }
+
+        private static IDictionary<string, object> GetUnobtrusiveValidationAttributes(PropertyInfo propertyInfo, ModelMetadata modelMetadata, IModelMetadataProvider provider)
+        {
+            var hasRequiredAttribute = false;
+            var propType = GetPropertyType(propertyInfo);
+            var attrs = new AttributeDictionary();
+
+            var valAttrs = propertyInfo.GetCustomAttributes(typeof(ValidationAttribute));
+
+            ValidationAttributeAdapterProvider adapterProvider = new ValidationAttributeAdapterProvider();
+            IAttributeAdapter adapter;
+
+            var context = new ClientModelValidationContext(
+                new ActionContext(),
+                modelMetadata,
+                provider,
+                attrs);
+
+            foreach (ValidationAttribute valAttr in valAttrs)
+            {
+                if (valAttr is RequiredAttribute)
+                {
+                    hasRequiredAttribute = true;
+                }
+
+                adapter = adapterProvider.GetAttributeAdapter(valAttr, null);
+                adapter.AddValidation(context);
+            }
+
+            if (!hasRequiredAttribute && context.ModelMetadata.IsRequired)
+            {
+                adapter = adapterProvider.GetAttributeAdapter(new RequiredAttribute(), null);
+                adapter.AddValidation(context);
+            }
+
+            if (propType == typeof(float) ||
+                propType == typeof(double) ||
+                propType == typeof(decimal))
+            {
+                (new NumericClientModelValidator()).AddValidation(context);
+            }
+
+            return attrs.ToDictionary(p => p.Key, pp => (object)pp.Value);
         }
     }
 }
