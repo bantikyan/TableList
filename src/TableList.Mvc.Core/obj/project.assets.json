@@ -1430,7 +1430,7 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
-      "TableList/1.0.0": {
+      "TableList/2.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "compile": {
@@ -4988,7 +4988,7 @@
         "system.xml.xmldocument.nuspec"
       ]
     },
-    "TableList/1.0.0": {
+    "TableList/2.0.0": {
       "type": "project",
       "path": "../TableList/TableList.csproj",
       "msbuildProject": "../TableList/TableList.csproj"
@@ -4999,7 +4999,7 @@
       "Microsoft.AspNetCore.Html.Abstractions >= 2.0.0",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.0.2",
       "NETStandard.Library >= 2.0.1",
-      "TableList >= 1.0.0"
+      "TableList >= 2.0.0"
     ]
   },
   "packageFolders": {
@@ -5007,7 +5007,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "restoreSettings": {
       "hideWarningsAndErrors": true
     },

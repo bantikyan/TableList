@@ -6,14 +6,16 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <licenseUrl>https://github.com/bantikyan/TableList/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/bantikyan/TableList</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Initial Testing release</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>CRUD Table List Inline Edit MVC</tags>
+    <dependencies>
+      <dependency id="TableList" version="2.0.0" />
+    </dependencies>
   </metadata>
   <files>
     <file src="Content\tablelist-mvc.css" target="" />

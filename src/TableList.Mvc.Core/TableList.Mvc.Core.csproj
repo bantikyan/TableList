@@ -3,7 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Zetalex.TableList.Mvc.Core</RootNamespace>
+    <Version>2.0.0</Version>
+    <Authors>Hovhannes Bantikyan, Vahe Khachaturyan</Authors>
+    <Company>Zetalex</Company>
+    <PackageLicenseUrl>https://github.com/bantikyan/TableList/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/bantikyan/TableList</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bantikyan/TableList</RepositoryUrl>
+    <PackageTags>CRUD Table List Inline Edit MVC Core</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="nuget.exe" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.0.0" />
@@ -14,4 +25,22 @@
     <ProjectReference Include="..\TableList\TableList.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Content\tablelist-mvc.css">
+      <Pack>true</Pack>
+      <PackagePath>Content\lib\table-list-mvc\dist\css</PackagePath>
+    </Content>
+    <Content Include="Content\tablelist-mvc.min.css">
+      <Pack>true</Pack>
+      <PackagePath>Content\lib\table-list-mvc\dist\css</PackagePath>
+    </Content>
+    <Content Include="Scripts\tablelist-mvc.js">
+      <Pack>true</Pack>
+      <PackagePath>Content\lib\table-list-mvc\dist\js</PackagePath>
+    </Content>
+    <Content Include="Scripts\tablelist-mvc.min.js">
+      <Pack>true</Pack>
+      <PackagePath>Content\lib\table-list-mvc\dist\js</PackagePath>
+    </Content>
+  </ItemGroup>
 </Project>

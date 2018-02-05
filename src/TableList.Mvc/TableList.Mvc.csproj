@@ -67,8 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Scripts\jquery-2.2.4.min.map" />
-    <None Include="TableList.Mvc.nuspec" />
+    <None Include="TableList.Mvc.nuspec">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TableList\TableList.csproj">
@@ -79,9 +80,6 @@
   <ItemGroup>
     <Content Include="Content\tablelist-mvc.css" />
     <Content Include="Content\tablelist-mvc.min.css" />
-    <Content Include="Scripts\jquery-2.2.4.intellisense.js" />
-    <Content Include="Scripts\jquery-2.2.4.js" />
-    <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Scripts\tablelist-mvc.js" />
     <Content Include="Scripts\tablelist-mvc.min.js" />
   </ItemGroup>

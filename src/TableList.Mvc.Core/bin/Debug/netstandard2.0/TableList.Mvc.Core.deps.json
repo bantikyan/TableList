@@ -7,12 +7,12 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "TableList.Mvc.Core/1.0.0": {
+      "TableList.Mvc.Core/2.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Html.Abstractions": "2.0.0",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.0.2",
           "NETStandard.Library": "2.0.1",
-          "TableList": "1.0.0"
+          "TableList": "2.0.0"
         },
         "runtime": {
           "TableList.Mvc.Core.dll": {}
@@ -991,7 +991,7 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
-      "TableList/1.0.0": {
+      "TableList/2.0.0": {
         "runtime": {
           "TableList.dll": {}
         }
@@ -999,7 +999,7 @@
     }
   },
   "libraries": {
-    "TableList.Mvc.Core/1.0.0": {
+    "TableList.Mvc.Core/2.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1704,7 +1704,7 @@
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
     },
-    "TableList/1.0.0": {
+    "TableList/2.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
