@@ -1,6 +1,6 @@
 # TableList
 
-<a href="#" target="_blank" rel="nofollow"><img src="https://ci.appveyor.com/api/projects/status/ectnla0f5r58yg2m/branch/master?svg=true" alt="bower version"></a>
+<a href="https://ci.appveyor.com/project/bantikyan/tablelist" target="_blank" rel="nofollow"><img src="https://ci.appveyor.com/api/projects/status/ectnla0f5r58yg2m/branch/master?svg=true" alt="bower version"></a>
 
 ## License
 
