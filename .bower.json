@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "ignore": [
     "examples",
+    "src",
     ".gitignore",
     "README.md",
     "TableList.sln"
