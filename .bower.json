@@ -1,5 +1,5 @@
 {
-  "name": "tablelist-ui",
+  "name": "tablelist-mvc",
   "version": "0.0.1",
   "ignore": [
     "examples",
