@@ -1,0 +1,13 @@
+{
+  "name": "tablelist-ui",
+  "version": "0.0.1",
+  "ignore": [
+    "examples",
+    ".gitignore",
+    "README.md",
+    "TableList.sln"
+  ],
+  "dependencies": {
+    "jquery": ">=2.2.4"
+  }
+}
