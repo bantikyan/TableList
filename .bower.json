@@ -1,6 +1,14 @@
 {
   "name": "tablelist-mvc",
   "version": "2.0.0",
+  "keywords": [
+    "crud",
+    "table",
+    "list",
+    "inline",
+    "edit",
+    "mvc"
+  ],
   "ignore": [
     "examples",
     "src",

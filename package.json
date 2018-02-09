@@ -1,0 +1,30 @@
+{
+  "name": "tablelist-mvc",
+  "version": "1.0.2",
+  "description": "",
+  "main": "dist/js/tablelist-mvc.js",
+  "style": "dist/css/tablelist-mvc.css",
+  "files": [
+    "dist/"
+  ],
+  "bugs": {
+    "url": "https://github.com/bantikyan/TableList/issues"
+  },
+  "homepage": "https://github.com/bantikyan/TableList",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bantikyan/TableList.git"
+  },
+  "keywords": [
+    "crud",
+    "table",
+    "list",
+    "inline",
+    "edit",
+    "mvc"
+  ],
+  "dependencies": {
+    "jquery": ">=2.2.4"
+  },
+  "license": "MIT"
+}
