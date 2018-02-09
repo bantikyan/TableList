@@ -1,6 +1,6 @@
 {
   "name": "tablelist-mvc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/js/tablelist-mvc.js",
   "style": "dist/css/tablelist-mvc.css",
@@ -15,6 +15,14 @@
     "type": "git",
     "url": "https://github.com/bantikyan/TableList.git"
   },
+  "contributors": [
+    {
+      "name": "Hovhannes Bantikyan"
+    },
+    {
+      "name": "Vahe Khachaturyan"
+    }
+  ],
   "keywords": [
     "crud",
     "table",
