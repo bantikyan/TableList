@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>tablelist-mvc</id>
+    <version>2.0.1</version>
+    <title>tablelist-mvc</title>
+    <authors>Hovhannes Bantikyan, Vahe Khachaturyan</authors>
+    <owners>bantikyan</owners>
+    <licenseUrl>https://github.com/bantikyan/TableList/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/bantikyan/TableList</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>UI compoments for TableList.Mvc or TableList.Mvc.Core NuGet libraries.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>CRUD Table List Inline Edit MVC Core</tags>
+  </metadata>
+  <files>
+    <file src="dist\css\*.*" target="Content\Content" />
+	  <file src="dist\js\*.*" target="Content\Scripts" />
+  </files>
+</package>

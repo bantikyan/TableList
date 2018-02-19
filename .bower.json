@@ -1,6 +1,6 @@
 {
   "name": "tablelist-mvc",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "keywords": [
     "crud",
     "table",
@@ -14,7 +14,9 @@
     "src",
     ".gitignore",
     "README.md",
-    "TableList.sln"
+    "TableList.sln",
+    "package.json",
+    "tablelist-mvc.nuspec"
   ],
   "dependencies": {
     "jquery": ">=2.2.4"
