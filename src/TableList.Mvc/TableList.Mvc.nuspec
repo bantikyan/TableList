@@ -11,16 +11,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Initial Testing release</releaseNotes>
-    <copyright>Copyright 2017</copyright>
+    <copyright>$copyright$</copyright>
     <tags>CRUD Table List Inline Edit MVC</tags>
     <dependencies>
-      <dependency id="TableList" version="2.0.0" />
+      <dependency id="TableList" version="2.0.1" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="Content\tablelist-mvc.css" target="" />
-    <file src="Content\tablelist-mvc.min.css" target="" />
-    <file src="Scripts\tablelist-mvc.js" target="" />
-    <file src="Scripts\tablelist-mvc.min.js" target="" />
-  </files>
 </package>

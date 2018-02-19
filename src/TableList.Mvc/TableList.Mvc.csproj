@@ -77,11 +77,5 @@
       <Name>TableList</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\tablelist-mvc.css" />
-    <Content Include="Content\tablelist-mvc.min.css" />
-    <Content Include="Scripts\tablelist-mvc.js" />
-    <Content Include="Scripts\tablelist-mvc.min.js" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

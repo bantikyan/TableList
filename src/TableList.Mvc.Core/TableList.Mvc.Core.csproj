@@ -3,13 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Zetalex.TableList.Mvc.Core</RootNamespace>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <Authors>Hovhannes Bantikyan, Vahe Khachaturyan</Authors>
     <Company>Zetalex</Company>
     <PackageLicenseUrl>https://github.com/bantikyan/TableList/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/bantikyan/TableList</PackageProjectUrl>
     <RepositoryUrl>https://github.com/bantikyan/TableList</RepositoryUrl>
     <PackageTags>CRUD Table List Inline Edit MVC Core</PackageTags>
+    <Description>Editor template for inline editing list of items. ASP.NET Core version.</Description>
+    <Copyright>Copyright 2018</Copyright>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <FileVersion>2.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,24 +27,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TableList\TableList.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Content\tablelist-mvc.css">
-      <Pack>true</Pack>
-      <PackagePath>Content\lib\table-list-mvc\dist\css</PackagePath>
-    </Content>
-    <Content Include="Content\tablelist-mvc.min.css">
-      <Pack>true</Pack>
-      <PackagePath>Content\lib\table-list-mvc\dist\css</PackagePath>
-    </Content>
-    <Content Include="Scripts\tablelist-mvc.js">
-      <Pack>true</Pack>
-      <PackagePath>Content\lib\table-list-mvc\dist\js</PackagePath>
-    </Content>
-    <Content Include="Scripts\tablelist-mvc.min.js">
-      <Pack>true</Pack>
-      <PackagePath>Content\lib\table-list-mvc\dist\js</PackagePath>
-    </Content>
   </ItemGroup>
 </Project>
