@@ -139,8 +139,7 @@ namespace Zetalex.TableList.Mvc.Core
 
                     var td = new TagBuilder("td");
                     
-                    var xx = html.TextBox(fName + prop.Name, prop.GetValue((TableListItem)items[i]), formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributesClone[prop.Name]);
-                    td.InnerHtml.AppendHtml(xx);
+                    td.InnerHtml.AppendHtml(html.TextBox(fName + prop.Name, prop.GetValue((TableListItem)items[i]), formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributesClone[prop.Name]));
                     td.InnerHtml.AppendHtml(html.ValidationMessage(fName + prop.Name));
 
                     tr.InnerHtml.AppendHtml(td);

@@ -35,83 +35,84 @@ namespace Zetalex.TableList.Mvc
             var properties = baseType.GetProperties().ToList();
             var typeMetadata = ModelMetadataProviders.Current.GetMetadataForType(null, baseType);
 
-            Dictionary<string, IDictionary<string, object>> propertyAttributes = new Dictionary<string, IDictionary<string, object>>();
-            Dictionary<string, Dictionary<string, string>> formattingAttributes = new Dictionary<string, Dictionary<string, string>>();
+            var propertyAttributes = new Dictionary<string, IDictionary<string, object>>();
+            var formattingAttributes = new Dictionary<string, IDictionary<string, string>>();
 
             foreach (var prop in properties)
             {
-                var typeName = GetPropertyTypeName(prop);
+                var propType = GetPropertyType(prop);
 
                 var propertyData = typeMetadata.Properties.Where(x => x.PropertyName == prop.Name).FirstOrDefault();
-                var attr = html.GetUnobtrusiveValidationAttributes(prop.Name, propertyData);
-                //attr.Add("class", "form-control");
-                attr.Add("class", "");
-                attr.Add("placeholder", propertyData.DisplayName ?? prop.Name);
+                var attrs = html.GetUnobtrusiveValidationAttributes(prop.Name, propertyData);
+
+                //attrs.Add("class", "form-control");
+                attrs.Add("class", "");
+                attrs.Add("placeholder", propertyData.DisplayName ?? prop.Name);
                 if (propertyData.IsReadOnly)
                 {
-                    attr.Add("readonly", "readonly");
+                    attrs.Add("readonly", "readonly");
                 }
 
-                if (typeName == "DateTime")
+                if (propType == typeof(DateTime))
                 {
-                    attr["class"] += " date-picker";
+                    attrs["class"] += " date-picker";
                 }
 
-                propertyAttributes.Add(prop.Name, attr);
+                propertyAttributes.Add(prop.Name, attrs);
 
-                Dictionary<string, string> fAttr = new Dictionary<string, string>();
-                fAttr.Add(nameof(propertyData.DisplayName), propertyData.DisplayName);
-                fAttr.Add(nameof(propertyData.DisplayFormatString), propertyData.DisplayFormatString);
-                formattingAttributes.Add(prop.Name, fAttr);
+                var fAttrs = new Dictionary<string, string>();
+                fAttrs.Add(nameof(propertyData.DisplayName), propertyData.DisplayName);
+                fAttrs.Add(nameof(propertyData.DisplayFormatString), propertyData.DisplayFormatString);
+                formattingAttributes.Add(prop.Name, fAttrs);
             }
 
-            StringBuilder sb = new StringBuilder();
+            var table = new TagBuilder("table");
+
             if (showHeader)
             {
-                BuildTableHeader(sb, properties, formattingAttributes);
+                AppendHead(table, properties, formattingAttributes);
             }
 
-            sb.AppendLine("<tbody>");
+            var tbody = new TagBuilder("tbody");
 
             if (model != null && model.Count > 0)
             {
-                BuildTableRows(html, sb, properties, model, fieldName, propertyAttributes, formattingAttributes);
+                AppendRows(html, tbody, properties, model, fieldName, propertyAttributes, formattingAttributes);
             }
 
             if (allowAdd)
             {
-                BuildLastTableRow(html, sb, properties, fieldName, propertyAttributes, formattingAttributes, model != null ? model.Count : 0);
+                AppendLastRow(html, tbody, properties, fieldName, propertyAttributes, formattingAttributes, model != null ? model.Count : 0);
             }
 
-            sb.AppendLine("</tbody>");
-
-            TagBuilder tag = new TagBuilder("table");
             if (htmlAttributes != null)
             {
-                tag.MergeAttributes(htmlAttributes);
+                table.MergeAttributes(htmlAttributes);
             }
 
-            if (tag.Attributes.ContainsKey("class"))
+            if (table.Attributes.ContainsKey("class"))
             {
-                tag.Attributes["class"] += " table-list-mvc";
+                table.Attributes["class"] += " table-list-mvc";
             }
             else
             {
-                tag.Attributes.Add("class", "table-list-mvc");
+                table.Attributes.Add("class", "table-list-mvc");
             }
 
-            tag.InnerHtml = sb.ToString();
+            table.InnerHtml += tbody;
 
-            return new MvcHtmlString(tag.ToString(TagRenderMode.Normal));
+            return new MvcHtmlString(table.ToString(TagRenderMode.Normal));
         }
 
-        private static void BuildTableRows(HtmlHelper html, StringBuilder sb, List<PropertyInfo> properties, dynamic items, string fieldName, Dictionary<string, IDictionary<string, object>> propertyAttributes, Dictionary<string, Dictionary<string, string>> formattingAttributes)
+        private static void AppendRows(HtmlHelper html, TagBuilder tag, List<PropertyInfo> properties, dynamic items, string fieldName, Dictionary<string, IDictionary<string, object>> propertyAttributes, Dictionary<string, IDictionary<string, string>> formattingAttributes)
         {
             for (int i = 0; i < items.Count; i++)
             {
                 var fName = fieldName + "[" + i + "].";
 
-                sb.AppendLine("<tr class=\"table-list-mvc-item-view\" data-item-index=\"" + i + "\">");
+                var tr = new TagBuilder("tr");
+                tr.Attributes.Add("class", "table-list-mvc-item-view");
+                tr.Attributes.Add("data-item-index", i.ToString());
 
                 var allowModify = (bool)properties.FirstOrDefault(p => p.Name.ToLower() == nameof(TableListItem.TL_AllowModify).ToLower()).GetValue((TableListItem)items[i]);
 
@@ -129,13 +130,15 @@ namespace Zetalex.TableList.Mvc
                         propertyAttributesClone[prop.Name].Add("readonly", "readonly");
                     }
 
-                    sb.Append("<td>");
-                    sb.Append(html.TextBox(fName + prop.Name, prop.GetValue((TableListItem)items[i]), formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributesClone[prop.Name]));
-                    sb.Append(html.ValidationMessage(fName + prop.Name));
-                    sb.AppendLine("</td>");
+                    var td = new TagBuilder("td");
+
+                    td.InnerHtml += html.TextBox(fName + prop.Name, prop.GetValue((TableListItem)items[i]), formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributesClone[prop.Name]);
+                    td.InnerHtml += html.ValidationMessage(fName + prop.Name);
+
+                    tr.InnerHtml += td;
                 }
 
-                sb.Append("<td>");
+                var tdLast = new TagBuilder("td");
 
                 foreach (var prop in properties)
                 {
@@ -146,24 +149,31 @@ namespace Zetalex.TableList.Mvc
                     }
 
                     var val = prop.GetValue((TableListItem)items[i]);
-                    sb.Append(html.Hidden(fName + prop.Name, val));
+                    tdLast.InnerHtml += html.Hidden(fName + prop.Name, val);
+
                     if (prop.Name == nameof(TableListItem.TL_AllowDelete) && (bool)val)
                     {
-                        sb.Append("<a href=\"#\" class=\"table-list-mvc-item-delete\">Delete</a>");
+                        var a = new TagBuilder("a");
+                        a.Attributes.Add("class", "table-list-mvc-item-delete");
+                        a.Attributes.Add("href", "#");
+                        a.SetInnerText("Delete");
+
+                        tdLast.InnerHtml += a;
                     }
                 }
 
-                sb.AppendLine("</td>");
-
-                sb.AppendLine("</tr>");
+                tr.InnerHtml += tdLast;
+                tag.InnerHtml += tr;
             }
         }
 
-        private static void BuildLastTableRow(HtmlHelper html, StringBuilder sb, List<PropertyInfo> properties, string fieldName, Dictionary<string, IDictionary<string, object>> propertyAttributes, Dictionary<string, Dictionary<string, string>> formattingAttributes, int index)
+        private static void AppendLastRow(HtmlHelper html, TagBuilder tag, List<PropertyInfo> properties, string fieldName, Dictionary<string, IDictionary<string, object>> propertyAttributes, Dictionary<string, IDictionary<string, string>> formattingAttributes, int index)
         {
             var fName = fieldName + "[" + index + "].";
 
-            sb.AppendLine("<tr class=\"table-list-mvc-item-new\" data-item-index=\"" + index + "\">");
+            var tr = new TagBuilder("tr");
+            tr.Attributes.Add("class", "table-list-mvc-item-new");
+            tr.Attributes.Add("data-item-index", index.ToString());
 
             foreach (var prop in properties)
             {
@@ -181,14 +191,14 @@ namespace Zetalex.TableList.Mvc
                 //TODO FIX
                 propertyAttributes[prop.Name]["class"] += " table-list-mvc-ignore";
 
-                sb.Append("<td>");
-                sb.Append(html.TextBox(fName + prop.Name, null, formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributes[prop.Name]));
-                //sb.Append(html.CheckBox(fName + prop.Name, false, propertyAttributes[prop.Name]));
-                sb.Append(html.ValidationMessage(fName + prop.Name));
-                sb.AppendLine("</td>");
+                var td = new TagBuilder("td");
+                td.InnerHtml += html.TextBox(fName + prop.Name, null, formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributes[prop.Name]);
+                td.InnerHtml += html.ValidationMessage(fName + prop.Name);
+
+                tr.InnerHtml += td;
             }
 
-            sb.Append("<td>");
+            var tdLast = new TagBuilder("td");
 
             foreach (var prop in properties)
             {
@@ -200,31 +210,37 @@ namespace Zetalex.TableList.Mvc
 
                 if (prop.Name == nameof(TableListItem.TL_State))
                 {
-                    sb.Append(html.Hidden(fName + prop.Name, TableListItemState.Added));
+                    tdLast.InnerHtml += html.Hidden(fName + prop.Name, TableListItemState.Added);
                 }
                 else if (prop.Name == nameof(TableListItem.TL_AllowModify))
                 {
-                    sb.Append(html.Hidden(fName + prop.Name, true));
+                    tdLast.InnerHtml += html.Hidden(fName + prop.Name, true);
                 }
                 else if (prop.Name == nameof(TableListItem.TL_AllowDelete))
                 {
-                    sb.Append(html.Hidden(fName + prop.Name, true));
-                    sb.Append("<a href=\"#\" class=\"table-list-mvc-item-delete\">Delete</a>");
+                    tdLast.InnerHtml += html.Hidden(fName + prop.Name, true);
+
+                    var a = new TagBuilder("a");
+                    a.Attributes.Add("class", "table-list-mvc-item-delete");
+                    a.Attributes.Add("href", "#");
+                    a.SetInnerText("Delete");
+
+                    tdLast.InnerHtml += a;
                 }
                 else
                 {
-                    sb.Append(html.Hidden(fName + prop.Name));
+                    tdLast.InnerHtml += html.Hidden(fName + prop.Name);
                 }
             }
 
-            sb.AppendLine("</td>");
-            sb.AppendLine("</tr>");
+            tr.InnerHtml += tdLast;
+            tag.InnerHtml += tr;
         }
 
-        private static void BuildTableHeader(StringBuilder sb, List<PropertyInfo> properties, Dictionary<string, Dictionary<string, string>> formattingAttributes)
+        private static void AppendHead(TagBuilder tag, List<PropertyInfo> properties, Dictionary<string, IDictionary<string, string>> formattingAttributes)
         {
-            sb.AppendLine("<thead>");
-            sb.AppendLine("<tr>");
+            var thead = new TagBuilder("thead");
+            var tr = new TagBuilder("tr");
 
             foreach (var prop in properties)
             {
@@ -234,15 +250,16 @@ namespace Zetalex.TableList.Mvc
                     continue;
                 }
 
-                sb.Append("<th>");
-                sb.Append(formattingAttributes[prop.Name]["DisplayName"] ?? prop.Name);
-                sb.AppendLine("</th>");
+                var th = new TagBuilder("th");
+                th.SetInnerText(formattingAttributes[prop.Name]["DisplayName"] ?? prop.Name);
+                tr.InnerHtml += th;
             }
 
-            sb.AppendLine("<th></th>");
+            var thEmpty = new TagBuilder("th");
+            tr.InnerHtml += thEmpty;
 
-            sb.AppendLine("</tr>");
-            sb.AppendLine("</thead>");
+            thead.InnerHtml += tr;
+            tag.InnerHtml += thead;
         }
 
         private static Dictionary<string, IDictionary<string, object>> CloneDictionary(Dictionary<string, IDictionary<string, object>> propertyAttributes)
@@ -260,19 +277,19 @@ namespace Zetalex.TableList.Mvc
             return propertyAttributesClone;
         }
 
-        private static string GetPropertyTypeName(PropertyInfo prop)
+        private static Type GetPropertyType(PropertyInfo prop)
         {
-            string typeName = "";
+            Type type;
             if (prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
             {
-                typeName = prop.PropertyType.GetGenericArguments()[0].Name;
+                type = prop.PropertyType.GetGenericArguments()[0];
             }
             else
             {
-                typeName = prop.PropertyType.Name;
+                type = prop.PropertyType;
             }
 
-            return typeName;
+            return type;
         }
     }
 }
