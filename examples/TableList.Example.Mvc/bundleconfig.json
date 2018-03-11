@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "Content/tablelist-mvc.min.css",
+    "inputFiles": [
+      "Content/tablelist-mvc.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/tablelist-mvc.min.js",
+    "inputFiles": [
+      "Scripts/tablelist-mvc.js"
+    ]
+  }
+]

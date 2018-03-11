@@ -163,7 +163,7 @@ namespace Zetalex.TableList.Mvc.Core
                         var a = new TagBuilder("a");
                         a.Attributes.Add("class", "table-list-mvc-item-delete");
                         a.Attributes.Add("href", "#");
-                        a.InnerHtml.SetContent("Delete");
+                        //a.InnerHtml.SetContent("Delete");
 
                         tdLast.InnerHtml.AppendHtml(a);
                     }
@@ -230,7 +230,7 @@ namespace Zetalex.TableList.Mvc.Core
                     var a = new TagBuilder("a");
                     a.Attributes.Add("class", "table-list-mvc-item-delete");
                     a.Attributes.Add("href", "#");
-                    a.InnerHtml.SetContent("Delete");
+                    //a.InnerHtml.SetContent("Delete");
 
                     tdLast.InnerHtml.AppendHtml(a);
                 }
