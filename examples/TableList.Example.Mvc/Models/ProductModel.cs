@@ -52,5 +52,8 @@ namespace Zetalex.TableList.Example.Mvc.Models
         [Range(1, int.MaxValue, ErrorMessage = "License Count must be greater then 0")]
         [DisplayName("Count To")]
         public int? CountTo { get; set; }
+
+        [TableListRadioButton]
+        public bool Default { get; set; }
     }
 }

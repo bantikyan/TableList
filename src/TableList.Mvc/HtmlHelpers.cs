@@ -58,6 +58,11 @@ namespace Zetalex.TableList.Mvc
                     attrs["class"] += " date-picker";
                 }
 
+                if (propType == typeof(bool) && Attribute.IsDefined(prop, typeof(TableListRadioButton)))
+                {
+                    attrs.Add("data-group", "group" + prop.Name);
+                }
+
                 propertyAttributes.Add(prop.Name, attrs);
 
                 var fAttrs = new Dictionary<string, string>();
@@ -132,7 +137,16 @@ namespace Zetalex.TableList.Mvc
 
                     var td = new TagBuilder("td");
 
-                    td.InnerHtml += html.TextBox(fName + prop.Name, prop.GetValue((TableListItem)items[i]), formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributesClone[prop.Name]);
+                    var propType = GetPropertyType(prop);
+                    if (propType == typeof(bool))
+                    {
+                        td.InnerHtml += html.CheckBox(fName + prop.Name, Convert.ToBoolean(prop.GetValue((TableListItem)items[i])), propertyAttributesClone[prop.Name]);
+                    }
+                    else
+                    {
+                        td.InnerHtml += html.TextBox(fName + prop.Name, prop.GetValue((TableListItem)items[i]), formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributesClone[prop.Name]);
+                    }
+                    
                     td.InnerHtml += html.ValidationMessage(fName + prop.Name);
 
                     tr.InnerHtml += td;
@@ -192,7 +206,17 @@ namespace Zetalex.TableList.Mvc
                 propertyAttributes[prop.Name]["class"] += " table-list-mvc-ignore";
 
                 var td = new TagBuilder("td");
-                td.InnerHtml += html.TextBox(fName + prop.Name, null, formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributes[prop.Name]);
+
+                var propType = GetPropertyType(prop);
+                if (propType == typeof(bool))
+                {
+                    td.InnerHtml += html.CheckBox(fName + prop.Name, false, propertyAttributes[prop.Name]);
+                }
+                else
+                {
+                    td.InnerHtml += html.TextBox(fName + prop.Name, null, formattingAttributes[prop.Name]["DisplayFormatString"], propertyAttributes[prop.Name]);
+                }
+                
                 td.InnerHtml += html.ValidationMessage(fName + prop.Name);
 
                 tr.InnerHtml += td;

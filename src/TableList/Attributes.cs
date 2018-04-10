@@ -8,4 +8,9 @@ namespace Zetalex.TableList
     public class TableListHiddenInput : Attribute
     {
     }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class TableListRadioButton : Attribute
+    {
+    }
 }

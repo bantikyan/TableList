@@ -17,7 +17,8 @@ namespace TableList.Example.Mvc.Controllers
                 Initial = (decimal)547,
                 BlockPrices = new List<ProductBlockPrice>
                 {
-                    new ProductBlockPrice { Initial = 600, CountFrom = 30 }
+                    new ProductBlockPrice { Initial = 600, CountFrom = 30 },
+                    new ProductBlockPrice { Initial = 400, CountFrom = 10, Default = true }
                 }
                 //Options = new List<InnerModel>
                 //             {
@@ -27,6 +28,12 @@ namespace TableList.Example.Mvc.Controllers
                 //             },
             };
 
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(ProductModel model)
+        {
             return View(model);
         }
 
