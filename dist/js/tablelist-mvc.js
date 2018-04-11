@@ -16,7 +16,7 @@ function tableListExternalBind() {
 function initTableList() {
     var form = $(".table-list-mvc").closest('form');
 
-    if (form == 'undefined' || form.data("validator") == 'undefined') {
+    if (typeof form == 'undefined' || typeof form.data("validator") == 'undefined') {
         return;
     }
 
@@ -78,7 +78,7 @@ function tableListBind() {
         }
 
         el = $(this);
-        if (tr.hasClass('table-list-mvc-item-new') && $(this).hasClass('date-picker') && dp != 'undefined' && dp) {
+        if (tr.hasClass('table-list-mvc-item-new') && $(this).hasClass('date-picker') && typeof dp != 'undefined' && dp) {
             setTimeout(function () {
                 tableListCloneRow(tr, el);
             }, 20);
@@ -206,7 +206,7 @@ function tableListValidate(el) {
 
     var form = $(el).closest('form');
 
-    if (form == 'undefined' || form.data("validator") == 'undefined') {
+    if (typeof form == 'undefined' || typeof form.data("validator") == 'undefined') {
         return;
     }
 
