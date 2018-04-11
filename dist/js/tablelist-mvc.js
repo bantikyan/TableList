@@ -1,4 +1,4 @@
-﻿/*TableList.Mvc 2.0.1*/
+﻿/*TableList.Mvc 2.0.3*/
 $(function () {
     initTableList();
 

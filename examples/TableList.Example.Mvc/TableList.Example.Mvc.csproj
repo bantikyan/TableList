@@ -179,7 +179,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\tablelist-mvc.js" />
-    <Content Include="Scripts\tablelist-mvc.min.js" />
+    <Content Include="Scripts\tablelist-mvc.min.js">
+      <DependentUpon>tablelist-mvc.js</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

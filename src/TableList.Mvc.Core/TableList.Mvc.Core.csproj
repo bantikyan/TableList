@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Zetalex.TableList.Mvc.Core</RootNamespace>
-    <Version>2.0.1</Version>
+    <Version>2.0.3</Version>
     <Authors>Hovhannes Bantikyan, Vahe Khachaturyan</Authors>
     <Company>Zetalex</Company>
     <PackageLicenseUrl>https://github.com/bantikyan/TableList/blob/master/LICENSE</PackageLicenseUrl>
@@ -12,8 +12,8 @@
     <PackageTags>CRUD Table List Inline Edit MVC Core</PackageTags>
     <Description>Editor template for inline editing list of items. ASP.NET Core version.</Description>
     <Copyright>Copyright 2018</Copyright>
-    <AssemblyVersion>2.0.1.0</AssemblyVersion>
-    <FileVersion>2.0.1.0</FileVersion>
+    <AssemblyVersion>2.0.3.0</AssemblyVersion>
+    <FileVersion>2.0.3.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
