@@ -1,6 +1,6 @@
 {
   "name": "tablelist-mvc",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "UI compoments for TableList.Mvc or TableList.Mvc.Core NuGet libraries.",
   "main": "dist/js/tablelist-mvc.js",
   "style": "dist/css/tablelist-mvc.css",

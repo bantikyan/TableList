@@ -22,6 +22,7 @@ namespace Zetalex.TableList.Example.Mvc.Models
         public decimal Initial { get; set; }
 
         public List<ProductBlockPrice> BlockPrices { get; set; }
+        public List<Option> Options { get; set; }
     }
 
     [Serializable]
@@ -55,5 +56,15 @@ namespace Zetalex.TableList.Example.Mvc.Models
 
         [TableListRadioButton]
         public bool Default { get; set; }
+    }
+
+    [Serializable]
+    public class Option : TableListItem
+    {
+        [TableListHiddenInput]
+        public int ID { get; set; }
+
+        [Required]
+        public string Name { get; set; }
     }
 }

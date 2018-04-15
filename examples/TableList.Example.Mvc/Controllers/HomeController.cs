@@ -20,12 +20,6 @@ namespace TableList.Example.Mvc.Controllers
                     new ProductBlockPrice { Initial = 600, CountFrom = 30 },
                     new ProductBlockPrice { Initial = 400, CountFrom = 10, Default = true }
                 }
-                //Options = new List<InnerModel>
-                //             {
-                //                 new InnerModel { ID = 1, FirstName = "item1", LastName = "last1", TL_AllowDelete = false },
-                //                 new InnerModel { ID = 2, FirstName = "item2", LastName = "last2", TL_AllowModify = false },
-                //                 new InnerModel { ID = 3, FirstName = "item3", LastName = "last3", BirthDate = new DateTime(1988, 11, 30) },
-                //             },
             };
 
             return View(model);

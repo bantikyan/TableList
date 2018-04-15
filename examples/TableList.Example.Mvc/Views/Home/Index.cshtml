@@ -7,11 +7,13 @@
 @using (Html.BeginForm())
 {
     @*@Html.HiddenFor(p => p.ID)
-    <div class="form-group">
-        <label for="Name">Name</label>
-        @Html.TextBoxFor(p => p.Initial, null, new { @class = "form-control" })
-    </div>*@
+        <div class="form-group">
+            <label for="Name">Name</label>
+            @Html.TextBoxFor(p => p.Initial, null, new { @class = "form-control" })
+        </div>*@
     @Html.TableListFor(p => p.BlockPrices, new { @class = "table table-bordered" }, showHeader: true)
+
+    @Html.TableListFor(p => p.Options, new { @class = "table table-bordered" }, showHeader: true)
 
     <button type="submit" class="btn btn-default">Submit</button>
 }

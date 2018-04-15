@@ -1,4 +1,4 @@
-﻿/*TableList.Mvc 2.0.3*/
+﻿/*TableList.Mvc 2.0.4*/
 $(function () {
     initTableList();
 
@@ -27,7 +27,7 @@ function initTableList() {
 
     $(form).submit(function (e) {
         if ($(this).valid()) {
-            var trs = $(this).find(".table-list-mvc > tbody > tr.table-list-mvc-item-new:last");
+            var trs = $(this).find(".table-list-mvc > tbody > tr.table-list-mvc-item-new");
             $(trs).each(function () {
                 $(this).remove();
             });
