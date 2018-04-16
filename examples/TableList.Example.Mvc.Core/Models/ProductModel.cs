@@ -19,6 +19,7 @@ namespace Zetalex.TableList.Example.Mvc.Core.Models
 
         [DisplayFormat(DataFormatString = "{0:0.00}", ApplyFormatInEditMode = true)]
         public decimal Initial { get; set; }
+        public bool IsTest { get; set; }
 
         public List<ProductBlockPrice> BlockPrices { get; set; }
     }
@@ -26,7 +27,7 @@ namespace Zetalex.TableList.Example.Mvc.Core.Models
     [Serializable]
     public class ProductBlockPrice : TableListItem
     {
-        [MaxLength(15)]
+        //[MaxLength(15)]
         [TableListHiddenInput]
         public int ID { get; set; }
 
@@ -55,5 +56,8 @@ namespace Zetalex.TableList.Example.Mvc.Core.Models
         [DisplayName("Count To")]
         [ReadOnly(true)]
         public int? CountTo { get; set; }
+        //[TableListHiddenInput]
+        public bool Default { get; set; }
+        public bool xxDefault { get; set; }
     }
 }

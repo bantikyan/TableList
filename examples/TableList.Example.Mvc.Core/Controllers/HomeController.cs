@@ -17,11 +17,11 @@ namespace TableList.Example.Mvc.Core.Controllers
             {
                 ID = 1,
                 Initial = (decimal)547,
-                BlockPrices = new List<ProductBlockPrice>
-                {
-                    new ProductBlockPrice { Initial = 600, CountFrom = 30 },
-                    new ProductBlockPrice { Initial = 400, CountFrom = 50 },
-                }
+                //BlockPrices = new List<ProductBlockPrice>
+                //{
+                //    new ProductBlockPrice { Initial = 600, CountFrom = 30 },
+                //    new ProductBlockPrice { Initial = 400, CountFrom = 50 },
+                //}
                 //Options = new List<InnerModel>
                 //             {
                 //                 new InnerModel { ID = 1, FirstName = "item1", LastName = "last1", TL_AllowDelete = false },
@@ -30,6 +30,12 @@ namespace TableList.Example.Mvc.Core.Controllers
                 //             },
             };
 
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Index(ProductModel model)
+        {
             return View(model);
         }
 

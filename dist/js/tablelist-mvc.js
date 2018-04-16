@@ -1,4 +1,4 @@
-﻿/*TableList.Mvc 2.0.4*/
+﻿/*TableList.Mvc 2.0.5*/
 $(function () {
     initTableList();
 
@@ -29,6 +29,14 @@ function initTableList() {
         if ($(this).valid()) {
             var trs = $(this).find(".table-list-mvc > tbody > tr.table-list-mvc-item-new");
             $(trs).each(function () {
+                var checkboxes = $(this).find(':checkbox');
+                $(checkboxes).each(function () {
+                    var chbHidden = $("input:hidden[name='" + $(this).attr('name') + "']");
+                    if (chbHidden.length) {
+                        chbHidden.remove();
+                    }
+                });
+
                 $(this).remove();
             });
         }

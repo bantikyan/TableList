@@ -15,11 +15,11 @@ namespace TableList.Example.Mvc.Controllers
             {
                 ID = 1,
                 Initial = (decimal)547,
-                BlockPrices = new List<ProductBlockPrice>
-                {
-                    new ProductBlockPrice { Initial = 600, CountFrom = 30 },
-                    new ProductBlockPrice { Initial = 400, CountFrom = 10, Default = true }
-                }
+                //BlockPrices = new List<ProductBlockPrice>
+                //{
+                //    new ProductBlockPrice { Initial = 600, CountFrom = 30 },
+                //    new ProductBlockPrice { Initial = 400, CountFrom = 10, Default = true }
+                //}
             };
 
             return View(model);

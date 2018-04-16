@@ -1,4 +1,4 @@
-﻿/*TableList.Mvc 1.0.7*/
+﻿/*TableList.Mvc 2.0.5*/
 $(function () {
     initTableList();
 
@@ -16,7 +16,7 @@ function tableListExternalBind() {
 function initTableList() {
     var form = $(".table-list-mvc").closest('form');
 
-    if (form == 'undefined' || form.data("validator") == 'undefined') {
+    if (typeof form == 'undefined' || typeof form.data("validator") == 'undefined') {
         return;
     }
 
@@ -27,8 +27,16 @@ function initTableList() {
 
     $(form).submit(function (e) {
         if ($(this).valid()) {
-            var trs = $(this).find(".table-list-mvc > tbody > tr.table-list-mvc-item-new:last");
+            var trs = $(this).find(".table-list-mvc > tbody > tr.table-list-mvc-item-new");
             $(trs).each(function () {
+                var checkboxes = $(this).find(':checkbox');
+                $(checkboxes).each(function () {
+                    var chbHidden = $("input:hidden[name='" + $(this).attr('name') + "']");
+                    if (chbHidden.length) {
+                        chbHidden.remove();
+                    }
+                });
+
                 $(this).remove();
             });
         }
@@ -78,10 +86,14 @@ function tableListBind() {
         }
 
         el = $(this);
-        if (tr.hasClass('table-list-mvc-item-new') && $(this).hasClass('date-picker') && dp != 'undefined' && dp) {
+        if (tr.hasClass('table-list-mvc-item-new') && $(this).hasClass('date-picker') && typeof dp != 'undefined' && dp) {
             setTimeout(function () {
                 tableListCloneRow(tr, el);
             }, 20);
+        }
+
+        if (tr.hasClass('table-list-mvc-item-new') && $(this).is(':checkbox')) {
+            tableListCloneRow(tr, el);
         }
     });
 
@@ -94,6 +106,12 @@ function tableListBind() {
 
     $('.table-list-mvc tr td > input.date-picker').unbind('dp.show').bind('dp.show', function (e) {
         $(this).attr('dp.shown', 1);
+    });
+
+    $(".table-list-mvc input[data-group]").click(function () {
+        var group = "input[data-group='" + $(this).attr("data-group") + "']";
+        $(group).prop("checked", false);
+        $(this).prop("checked", true);
     });
 
     $('.table-list-mvc-item-delete').unbind('click').bind('click', function (e) {
@@ -153,8 +171,16 @@ function tableListCloneRow(tr, el) {
     var index = parseInt(tr.attr('data-item-index'));
     var newIndex = index + 1;
 
-    var tempVal = $(el).val();
-    $(el).val('');
+    var tempVal;
+
+    if ($(el).is(':checkbox')) {
+        tempVal = $(el).prop('checked');
+        $(el).prop('checked', false);
+    }
+    else {
+        tempVal = $(el).val();
+        $(el).val('');
+    }
 
     var shown = $(el).attr('dp.shown');
     if (typeof shown != 'undefined' && parseInt(shown)) {
@@ -168,7 +194,14 @@ function tableListCloneRow(tr, el) {
 
     tr.removeClass('table-list-mvc-item-new');
     tr.find(".table-list-mvc-ignore").removeClass("table-list-mvc-ignore");
-    $(el).val(tempVal);
+
+    if ($(el).is(':checkbox')) {
+        $(el).prop('checked', tempVal);
+    }
+    else {
+        $(el).val(tempVal);
+    }
+
     if (typeof shown != 'undefined' && parseInt(shown)) {
         $(el).attr('dp.shown', 1);
     }
@@ -181,7 +214,7 @@ function tableListValidate(el) {
 
     var form = $(el).closest('form');
 
-    if (form == 'undefined' || form.data("validator") == 'undefined') {
+    if (typeof form == 'undefined' || typeof form.data("validator") == 'undefined') {
         return;
     }
 
