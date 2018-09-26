@@ -35,13 +35,9 @@ Also you can download the latest release:
 
 ## Basic Usage
 
-Several quick start options are available:
+First make sure you have linked css and js files: ```tablelist-mvc.css``` and ```tablelist-mvc.js``` or minimized versions.
 
-* [Download the latest release](https://github.com//bantikyan/icheck-bootstrap/archive/3.0.1.zip)
-* Install with [Bower](https://bower.io): <code>bower install icheck-bootstrap</code>
-* Install with [npm](https://www.npmjs.com/package/icheck-bootstrap): <code>npm install icheck-bootstrap</code>
-* Install with [Nuget](https://www.nuget.org/packages/icheck-bootstrap/): <code>Install-Package icheck-bootstrap</code>
-* Use CDN [jsDelivr](https://www.jsdelivr.com/package/npm/icheck-bootstrap)
+
 
 ## License
 
