@@ -12,6 +12,16 @@ This package gives ASP.Net developers easy way of editing list of items with mod
 * <a href="#user-content-color-schemes">Color schemes</a>
 * <a href="#user-content-license">License</a>
 
+## Instalation
+
+Several quick start options are available:
+
+* [Download the latest release](https://github.com//bantikyan/icheck-bootstrap/archive/3.0.1.zip)
+* Install with [Bower](https://bower.io): <code>bower install icheck-bootstrap</code>
+* Install with [npm](https://www.npmjs.com/package/icheck-bootstrap): <code>npm install icheck-bootstrap</code>
+* Install with [Nuget](https://www.nuget.org/packages/icheck-bootstrap/): <code>Install-Package icheck-bootstrap</code>
+* Use CDN [jsDelivr](https://www.jsdelivr.com/package/npm/icheck-bootstrap)
+
 ## License
 
 TableList released under the [MIT license](https://github.com/bantikyan/TableList/blob/master/LICENSE). Feel free to use it in personal and commercial projects.
