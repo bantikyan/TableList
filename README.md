@@ -9,7 +9,7 @@ Usage is very simple. If your ```Model``` is a ```List``` or you have any ```Lis
 ## Table of contents
 
 * <a href="#user-content-installation">Installation</a>
-* <a href="#user-content-html-basic-usage">Basic Usage</a>
+* <a href="#user-content-basic-usage">Basic Usage</a>
 * <a href="#user-content-aspnet-mvc-syntax">ASP.NET MVC syntax</a>
 * <a href="#user-content-color-schemes">Color schemes</a>
 * <a href="#user-content-license">License</a>
