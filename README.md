@@ -4,6 +4,8 @@
 
 This package gives ASP.Net developers easy way of editing list of items with model binding. This means you can edit elements of your list inline, and all changes will be submited with form. For this purpose ```Html.TableListFor``` HTML helper was developed both for ASP.NET Core and ASP.NET MVC.
 
+Usage is very simple. If your ```Model``` is a ```List``` or you have any ```List``` properties in your ```Model``` you want to make them editable, you simple need to derive them from ```TableListItem``` class and use ```Html.TableListFor``` HTML helper on your ```View```. All CRUD operations are supported.
+
 ## Table of contents
 
 * <a href="#user-content-installation">Installation</a>
