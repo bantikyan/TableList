@@ -35,7 +35,7 @@ Also you can download the latest release:
 
 ## Basic Usage
 
-First make sure you have linked css and js files: ```tablelist-mvc.css``` and ```tablelist-mvc.js``` or minimized versions. We use JQuery so link to jquery file must be before link of ```tablelist-mvc.js```.
+First make sure you have linked css and js files: ```tablelist-mvc.css``` and ```tablelist-mvc.js``` or minimized versions. We use JQuery so link to jquery file must be before link of ```tablelist-mvc.js```. Also if you have some validation attributes, validation js files needed to be linked.
 
 
 
