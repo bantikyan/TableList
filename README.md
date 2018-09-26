@@ -45,7 +45,7 @@ Your page may look like this:
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-    <link rel="stylesheet" href="~/css/tablelist-mvc.css" />
+    <link rel="stylesheet" href="tablelist-mvc.css" />
 </head>
 <body>
     ...
