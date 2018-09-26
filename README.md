@@ -6,13 +6,13 @@ This package gives ASP.Net developers easy way of editing list of items with mod
 
 ## Table of contents
 
-* <a href="#user-content-instalation">Instalation</a>
+* <a href="#user-content-installation">Installation</a>
 * <a href="#user-content-html-syntax">HTML syntax</a>
 * <a href="#user-content-aspnet-mvc-syntax">ASP.NET MVC syntax</a>
 * <a href="#user-content-color-schemes">Color schemes</a>
 * <a href="#user-content-license">License</a>
 
-## Instalation
+## Installation
 
 Several quick start options are available:
 
