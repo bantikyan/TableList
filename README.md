@@ -37,7 +37,26 @@ Also you can download the latest release:
 
 First make sure you have linked css and js files: ```tablelist-mvc.css``` and ```tablelist-mvc.js``` or minimized versions. We use JQuery so link to jquery file must be before link of ```tablelist-mvc.js```. Also if you have some validation attributes, validation js files needed to be linked.
 
+Your page may look like this: 
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <link rel="stylesheet" href="~/css/tablelist-mvc.css" />
+</head>
+<body>
+    ...
 
+    <script src="jquery.js"></script>
+    <script src="jquery.validate.js"></script>
+    <script src="jquery.validate.unobtrusive.js"></script>
+    <script src="~/js/tablelist-mvc.js"></script>
+</body>
+</html>
+```
 
 ## License
 
