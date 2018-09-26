@@ -9,12 +9,22 @@ Usage is very simple. If your ```Model``` is a ```List``` or you have any ```Lis
 ## Table of contents
 
 * <a href="#user-content-installation">Installation</a>
-* <a href="#user-content-html-syntax">HTML syntax</a>
+* <a href="#user-content-html-basic-usage">Basic Usage</a>
 * <a href="#user-content-aspnet-mvc-syntax">ASP.NET MVC syntax</a>
 * <a href="#user-content-color-schemes">Color schemes</a>
 * <a href="#user-content-license">License</a>
 
 ## Installation
+
+Several quick start options are available:
+
+* [Download the latest release](https://github.com//bantikyan/icheck-bootstrap/archive/3.0.1.zip)
+* Install with [Bower](https://bower.io): <code>bower install icheck-bootstrap</code>
+* Install with [npm](https://www.npmjs.com/package/icheck-bootstrap): <code>npm install icheck-bootstrap</code>
+* Install with [Nuget](https://www.nuget.org/packages/icheck-bootstrap/): <code>Install-Package icheck-bootstrap</code>
+* Use CDN [jsDelivr](https://www.jsdelivr.com/package/npm/icheck-bootstrap)
+
+## Basic Usage
 
 Several quick start options are available:
 
