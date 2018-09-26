@@ -16,7 +16,12 @@ Usage is very simple. If your ```Model``` is a ```List``` or you have any ```Lis
 
 ## Installation
 
-Several quick start options are available:
+Library consist of back-end  and front-end parts.
+Front-end components can be installed one of the following sources:
+* Install with [Bower](https://bower.io): <code>bower install icheck-bootstrap</code>
+* Install with [npm](https://www.npmjs.com/package/icheck-bootstrap): <code>npm install icheck-bootstrap</code>
+* Install with [Nuget](https://www.nuget.org/packages/icheck-bootstrap/): <code>Install-Package icheck-bootstrap</code>
+* Use CDN [jsDelivr](https://www.jsdelivr.com/package/npm/icheck-bootstrap)
 
 * [Download the latest release](https://github.com//bantikyan/icheck-bootstrap/archive/3.0.1.zip)
 * Install with [Bower](https://bower.io): <code>bower install icheck-bootstrap</code>
