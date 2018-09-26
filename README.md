@@ -18,10 +18,10 @@ Usage is very simple. If your ```Model``` is a ```List``` or you have any ```Lis
 
 Library consist of back-end  and front-end parts.
 Front-end components can be installed one of the following sources:
-* Install with [Bower](https://bower.io): <code>bower install icheck-bootstrap</code>
-* Install with [npm](https://www.npmjs.com/package/icheck-bootstrap): <code>npm install icheck-bootstrap</code>
-* Install with [Nuget](https://www.nuget.org/packages/icheck-bootstrap/): <code>Install-Package icheck-bootstrap</code>
-* Use CDN [jsDelivr](https://www.jsdelivr.com/package/npm/icheck-bootstrap)
+* Install with [Bower](https://bower.io): <code>bower install tablelist-mvc</code>
+* Install with [npm](https://www.npmjs.com/package/tablelist-mvc): <code>npm install tablelist-mvc</code>
+* Install with [Nuget](https://www.nuget.org/packages/tablelist-mvc): <code>Install-Package tablelist-mvc</code>
+* Use CDN [jsDelivr](https://www.jsdelivr.com/package/npm/tablelist-mvc)
 
 * [Download the latest release](https://github.com//bantikyan/icheck-bootstrap/archive/3.0.1.zip)
 * Install with [Bower](https://bower.io): <code>bower install icheck-bootstrap</code>
