@@ -1,0 +1,12 @@
+﻿@using Zetalex.TableList.Mvc.Core3
+@model Zetalex.TableList.Example.Mvc.Core.Models.ProductModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-controller="Home" asp-action="Index" method="post">
+
+    @Html.TableListFor(p => p.BlockPrices, new { @class = "table table-bordered" }, showHeader: true)
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

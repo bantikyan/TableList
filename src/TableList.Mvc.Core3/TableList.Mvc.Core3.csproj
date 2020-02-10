@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Zetalex.TableList.Mvc.Core3</RootNamespace>
+    <Version>3.1.1</Version>
+    <Authors>Hovhannes Bantikyan, Vahe Khachaturyan</Authors>
+    <Company>Zetalex</Company>
+    <PackageLicenseUrl>https://github.com/bantikyan/TableList/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/bantikyan/TableList</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bantikyan/TableList</RepositoryUrl>
+    <PackageTags>CRUD Table List Inline Edit MVC Core</PackageTags>
+    <Description>Editor template for inline editing list of items. ASP.NET Core 3.1 version.</Description>
+    <Copyright>Copyright 2020</Copyright>
+    <AssemblyVersion>3.1.1.0</AssemblyVersion>
+    <FileVersion>3.1.1.0</FileVersion>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Remove="nuget.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TableList\TableList.csproj" />
+  </ItemGroup>
+
+</Project>
